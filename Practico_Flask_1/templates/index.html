@@ -1,0 +1,8 @@
+{% extends "template_base.html" %}
+
+{% block content %}
+    <p>Esta es tu pagina de inicio || Agrega o ve tus productos </p>
+    <a href="{{ url_for('productos') }}" class="btn">Ver Productos</a>
+    <a href="{{ url_for('agregar_producto') }}" class="btn">Agregar Producto</a>
+{% endblock %}
+

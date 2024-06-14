@@ -1,0 +1,23 @@
+{% extends "template_base.html" %}
+
+{% block content %}
+    <h2>Lista de Productos</h2>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.categoria }}</td>
+            <td>
+                <form action="{{ url_for('eliminar_categoria', categoria=producto.categoria) }}" method="POST" style="display:inline;">
+                    <button type="submit">Eliminar Categoría</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
